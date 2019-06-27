@@ -1,0 +1,97 @@
+<section class="bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+
+                <div class="row mb-4">
+
+
+                    <div class="col-10 text-center offset-1">
+                        <img src="http://dev.bizbuzz.digital/galleria40/img/galleria40-logo.png" class="img-fluid">
+                    </div>
+
+                </div>
+
+                <div id="first">
+
+                    <div class="myform form ">
+                        <div class="col-8 mt-2 mb-2 offset-2">
+
+                            <img src="http://dev.bizbuzz.digital/galleria40/img/vodafone-logo.png" class="img-fluid">
+                        </div>
+                        <div class="logo mb-3">
+
+                            <div class="col-md-12 text-center mt-3">
+                                <h2 class="text-capitalize font-weight-bold Title">Who do you think will win today ?!
+                                </h2>
+                            </div>
+                        </div>
+
+                        <form >
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">Name</label>
+                                <input type="text" class="form-control" required="" placeholder="Enter Your Name"
+                                    name="name" [(ngModel)]="NameValue">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">Email</label>
+                                <input type="email" class="form-control FormEmail" required=""
+                                    placeholder="Enter Your Email Address" name="Email" [(ngModel)]="EmailValue">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">Mobile No.</label>
+                                <input type="text" class="form-control FormNo" required=""
+                                    placeholder="Enter Your Mobile Number" name="phone" pattern=".{11,}" [(ngModel)]="phoneValue">
+                            </div>
+
+                            <div class="form-group mb-3 mt-4 text-center">
+
+                                <div class="row">
+                                    <div class="col-md-6 col-6">
+                                        <div class="row">
+                                            <div class="col-md-6 col-6">
+                                                <img src="http://dev.bizbuzz.digital/galleria40/img/egypt.png" class="img-fluid">
+                                                <h6 class="font-weight-bold">Egypt</h6>
+                                            </div>
+                                            <div class="col-md-6 col-6 mt-5">
+                                                <input type="number" class="form-control team" required=""
+                                                    placeholder="Team 1" name="team1" [(ngModel)]="firstValue">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 col-6">
+                                        <div class="row">
+                                            <div class="col-md-6 col-6 mt-5">
+                                                <input type="number" class="form-control team" required=""
+                                                    placeholder="Team 2" name="team2" [(ngModel)]="secValue">
+                                            </div>
+                                            <div class="col-md-6 col-6">
+                                                <img src="http://dev.bizbuzz.digital/galleria40/img/zimbabwe.png" class="img-fluid">
+                                                <h6 class="font-weight-bold">Zimbabwe</h6>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-center mt-3 mb-4">
+                                <button type="submit"
+                                    class=" btn btn-block mybtn btn-success tx-tfm font-weight-bold text-capitalize"
+                                    name="myButton" (click)="onsubmit()">Send</button>
+                            </div>
+                        </form>
+                        <div class="col-12">
+                            <img src="http://dev.bizbuzz.digital/galleria40/img/logos.png" class="img-fluid">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

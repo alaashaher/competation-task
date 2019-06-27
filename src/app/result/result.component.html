@@ -1,0 +1,148 @@
+<div class="container-fluid">
+    <div class="row mb-5 mt-3">
+        <div class="col-md-3">
+            <img src="https://dev.bizbuzz.digital/galleria40/img/Logo.png" class="img-fluid">
+        </div>
+
+        <div class="col-md-3 offset-md-6">
+            <img src="http://dev.bizbuzz.digital/galleria40/img/vodafone-logo.png" class="img-fluid">
+        </div>
+
+    </div><br>
+
+
+
+    <form action="results.php" method="post" id="myForm">
+
+        <div class="row">
+
+
+            <div class="col-md-4 form-group mb-5 text-center offset-md-4">
+
+                <div class="row">
+                    <div class="col-md-6 col-6">
+                        <div class="row">
+                            <div class="col-md-6 col-6 flag">
+                                <img src="http://dev.bizbuzz.digital/galleria40/img/egypt.png" class="img-fluid">
+                                <h6 class="font-weight-bold">Egypt</h6>
+                            </div>
+
+                            <div class="col-md-6 col-6 mt-3">
+                                <input type="number" class="form-control" name="valueToSearch" placeholder=" Team 1"
+                                    id="valueToSearch" onkeyup="saveValue(this);">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-6">
+                        <div class="row">
+                            <div class="col-md-6 col-6 mt-3">
+                                <input type="number" class="form-control" name="valueToSearch2" placeholder="Team 2"
+                                    id="valueToSearch2" onkeyup="saveValue(this);">
+                            </div>
+
+                            <div class="col-md-6 col-6 flag">
+                                <img src="http://dev.bizbuzz.digital/galleria40/img/zimbabwe.png" class="img-fluid">
+                                <h6 class="font-weight-bold">Zimbabwe</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2 offset-md-10 mt-5">
+                        <input type="submit" class="btn btn-success" name="resetBtn" value="Reset" id="ResetBtn">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div id="myTable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6"></div>
+                        <div class="col-sm-12 col-md-6"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table class="table mt-5 dataTable no-footer" width="100%" id="myTable" role="grid"
+                                style="width: 100%;">
+                                <thead class="thead-dark">
+                                    <tr role="row">
+                                        <th class="sorting_asc" tabindex="0" aria-controls="myTable" rowspan="1"
+                                            colspan="1" aria-sort="ascending"
+                                            aria-label="ID: activate to sort column descending" style="width: 15px;">ID
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1"
+                                            aria-label="Name: activate to sort column ascending" style="width: 43px;">
+                                            Name</th>
+                                        <th class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1"
+                                            aria-label="Phone: activate to sort column ascending" style="width: 99px;">
+                                            Phone</th>
+                                        <th class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1"
+                                            aria-label="Egypt: activate to sort column ascending" style="width: 41px;">
+                                            Egypt</th>
+                                        <th class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1"
+                                            aria-label="Zimbabwe: activate to sort column ascending"
+                                            style="width: 74px;">Zimbabwe</th>
+                                    </tr>
+                                </thead>
+
+                                <!-- populate table from mysql database -->
+                                <tbody>
+                                    <tr role="row" class="odd">
+                                        <td class="sorting_1">43</td>
+                                        <td>Eman</td>
+                                        <td>0111111111111</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5"></div>
+                        <div class="col-sm-12 col-md-7"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 text-center resultsDiv mb-5">
+                <div class="row text-center">
+                    <input type="submit" name="result3" value="Winning Team" class="btn btn-primary mb-2">
+                    <input type="submit" name="result2" value="Goals Difference" class="btn btn-primary mb-2">
+                    <input type="submit" name="result1" value="Final Score" class="btn btn-primary mb-2">
+                    <br>
+                </div>
+
+                <div class="row text-center">
+                    <div class="counter">
+                        <div class="employees text-center">
+                            <p class="counter-count">0</p>
+                            <p class="employee-p" id="demo"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <input type="submit" name="filterResult3" value="Third Place Winner" class="btn btn-success mb-2">
+
+                    <input type="submit" name="filterResult2" value="Second Place Winner" class="btn btn-success mb-2">
+
+                    <input type="submit" name="filterResult1" value="First Place Winner" class="btn btn-success mb-2">
+
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <div class="row">
+        <div class="col-12 w-100 m-0 p-0 text-center">
+            <img src="http://dev.bizbuzz.digital/galleria40/img/logos.png" class="img-fluid m-0 p-0">
+        </div>
+    </div>
+</div>

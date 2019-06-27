@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'task';
+  title = 'form-app';
+  constructor(
+    private router: Router
+  ) { }
+  gotoFrom() {
+    this.router.navigate(['FormComponent']);
+  }
+  gotoResult() {
+    this.router.navigate(['ResultComponent']);
+  }
 }
