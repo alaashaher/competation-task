@@ -11,6 +11,7 @@ export class ResultComponent implements OnInit {
     firstValue: any;
     SecondValue: any;
 
+    differentValue: any;
     ObjValue = {
         id: null,
         name: null,
@@ -70,9 +71,54 @@ export class ResultComponent implements OnInit {
                     console.log(this.ObjAllValue);
                 }
             }
-        } else {
-            console.log('first team is win');
+        }
+    }
 
+    GoalsDifference() {
+        this.resultTable = true;
+        this.allTable = false;
+        if (this.firstValue > this.SecondValue) {
+            this.differentValue = this.firstValue - this.SecondValue;
+            for (let i = 0; i < this.resultValue.length; i++) {
+                console.log(this.resultValue[i].firstTeam);
+                if (this.differentValue === this.resultValue[i].firstTeam - this.resultValue[i].secondteam) {
+                    this.ObjValue.id = this.resultValue[i].id;
+                    this.ObjValue.name = this.resultValue[i].name;
+                    this.ObjValue.phone = this.resultValue[i].phone;
+                    this.ObjValue.firstTeam = this.resultValue[i].firstTeam;
+                    this.ObjValue.secondteam = this.resultValue[i].secondteam;
+                    this.ObjAllValue.push(this.ObjValue);
+                    console.log(this.ObjAllValue);
+                }
+            }
+        } else if (this.SecondValue > this.firstValue) {
+            this.differentValue = this.SecondValue - this.firstValue;
+            for (let i = 0; i < this.resultValue.length; i++) {
+                console.log(this.resultValue[i].firstTeam);
+                if (this.differentValue === this.resultValue[i].secondteam - this.resultValue[i].firstTeam) {
+                    this.ObjValue.id = this.resultValue[i].id;
+                    this.ObjValue.name = this.resultValue[i].name;
+                    this.ObjValue.phone = this.resultValue[i].phone;
+                    this.ObjValue.firstTeam = this.resultValue[i].firstTeam;
+                    this.ObjValue.secondteam = this.resultValue[i].secondteam;
+                    this.ObjAllValue.push(this.ObjValue);
+                    console.log(this.ObjAllValue);
+                }
+            }
+        }
+    }
+
+    FinalScore() {
+        for (let i = 0; i < this.resultValue.length; i++) {
+            if (this.firstValue === this.resultValue[i].firstTeam && this.SecondValue === this.resultValue[i].secondteam) {
+                this.ObjValue.id = this.resultValue[i].id;
+                this.ObjValue.name = this.resultValue[i].name;
+                this.ObjValue.phone = this.resultValue[i].phone;
+                this.ObjValue.firstTeam = this.resultValue[i].firstTeam;
+                this.ObjValue.secondteam = this.resultValue[i].secondteam;
+                this.ObjAllValue.push(this.ObjValue);
+                console.log(this.ObjAllValue);
+            }
         }
     }
 }
