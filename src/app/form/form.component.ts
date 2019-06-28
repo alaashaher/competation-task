@@ -6,36 +6,39 @@ import { FromProvider } from './form-provider';
     styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-    model: any = {};
+    // model: any = {};
     NameValue: any;
     EmailValue: any;
     phoneValue: any;
     firstValue: any;
     secValue: any;
     ObjValue = {
-        id: '',
-        name: '',
-        phone: '',
-        firstTeam: '',
-        secondteam: ''
-     };
-    // ObjAllValue: any;
+        id: null,
+        name: null,
+        phone: null,
+        firstTeam: null,
+        secondteam: null
+    };
+    count: any;
+    ObjAllValue: any;
     constructor(
         private fromProvider: FromProvider,
-    ) {}
+    ) { }
     ngOnInit() {
-        // this.ObjAllValue = [];
+        this.count = 0;
+        this.ObjAllValue = [];
     }
 
     onsubmit() {
+        this.ObjValue.id = this.count + 1;
         this.ObjValue.name = this.NameValue;
         this.ObjValue.phone = this.phoneValue;
         this.ObjValue.firstTeam = this.firstValue;
         this.ObjValue.secondteam = this.secValue;
         this.fromProvider.appVariables.setValues(this.ObjValue);
         console.log(this.fromProvider.appVariables.displayValues());
-        alert('SUCCESS!)\n\n');
+        this.ObjAllValue.push(this.ObjValue);
+        console.log(this.ObjAllValue);
+        this.count = this.count + 1;
     }
-
-
 }

@@ -12,7 +12,7 @@
 
 
 
-    <form action="results.php" method="post" id="myForm">
+    <form>
 
         <div class="row">
 
@@ -29,7 +29,7 @@
 
                             <div class="col-md-6 col-6 mt-3">
                                 <input type="number" class="form-control" name="valueToSearch" placeholder=" Team 1"
-                                    id="valueToSearch" onkeyup="saveValue(this);">
+                                    id="valueToSearch" [(ngModel)]="firstValue">
                             </div>
 
                         </div>
@@ -39,7 +39,7 @@
                         <div class="row">
                             <div class="col-md-6 col-6 mt-3">
                                 <input type="number" class="form-control" name="valueToSearch2" placeholder="Team 2"
-                                    id="valueToSearch2" onkeyup="saveValue(this);">
+                                    id="valueToSearch2"[(ngModel)]="SecondValue" >
                             </div>
 
                             <div class="col-md-6 col-6 flag">
@@ -53,7 +53,7 @@
 
                 <div class="row">
                     <div class="col-md-2 offset-md-10 mt-5">
-                        <input type="submit" class="btn btn-success" name="resetBtn" value="Reset" id="ResetBtn">
+                        <input type="submit" class="btn btn-success" name="resetBtn" value="Reset" id="ResetBtn" (click)="ShowAllResult()">
                     </div>
                 </div>
             </div>
@@ -93,13 +93,13 @@
                                 </thead>
 
                                 <!-- populate table from mysql database -->
-                                <tbody>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">43</td>
-                                        <td>Eman</td>
-                                        <td>0111111111111</td>
-                                        <td>1</td>
-                                        <td>1</td>
+                                <tbody >
+                                    <tr role="row"  class="odd" *ngFor="let valueResult of resultValue; let i= index;">
+                                        <td class="sorting_1">{{valueResult.id}}</td>
+                                        <td>{{valueResult.name}}</td>
+                                        <td>{{valueResult.phone}}</td>
+                                        <td>{{valueResult.firstTeam}}</td>
+                                        <td>{{valueResult.secondteam}}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -114,9 +114,9 @@
 
             <div class="col-md-8 text-center resultsDiv mb-5">
                 <div class="row text-center">
-                    <input type="submit" name="result3" value="Winning Team" class="btn btn-primary mb-2">
-                    <input type="submit" name="result2" value="Goals Difference" class="btn btn-primary mb-2">
-                    <input type="submit" name="result1" value="Final Score" class="btn btn-primary mb-2">
+                    <input type="submit" name="result3" value="Winning Team" class="btn btn-primary mb-2" (click)="WinningTeam()">
+                    <input type="submit" name="result2" value="Goals Difference" class="btn btn-primary mb-2"(click)="GoalsDifference()">
+                    <input type="submit" name="result1" value="Final Score" class="btn btn-primary mb-2" (click)="FinalScore()">
                     <br>
                 </div>
 

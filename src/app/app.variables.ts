@@ -3,10 +3,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AppVariables {
 
-    private ObjAllValue = [];
+    private ObjAllValue: any;
 
-    constructor() { }
+    constructor() {
+        this.ObjAllValue = [];
+    }
     setValues(valueObject) {
+        console.log(valueObject);
         this.ObjAllValue.push(valueObject);
     }
 
